@@ -8,6 +8,7 @@ namespace ProjetoAnalisadorTecnicoHandbol
 {
     static class Program
     {
+        // TESTE
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
