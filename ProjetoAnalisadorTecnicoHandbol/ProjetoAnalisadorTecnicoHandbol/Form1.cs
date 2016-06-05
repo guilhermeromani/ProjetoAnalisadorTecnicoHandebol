@@ -40,21 +40,6 @@ namespace ProjetoAnalisadorTecnicoHandbol
 
             #region .: Entradas :.
 
-            //// Posicao
-            //FuzzySet cfPontaDireita = new FuzzySet("pontaDireita", new TrapezoidalFunction(1, 1, 1));
-            //FuzzySet cfMeiaDireita = new FuzzySet("meiaDireita", new TrapezoidalFunction(2, 2, 2, 2));
-            //FuzzySet cfCentral = new FuzzySet("central", new TrapezoidalFunction(3, 3, 3));
-            //FuzzySet cfMeiaEsquerda = new FuzzySet("meiaEsquerda", new TrapezoidalFunction(4, 4, 4));
-            //FuzzySet cfPontaEsquerda = new FuzzySet("pontaEsquerda", new TrapezoidalFunction(5, 5, 5));
-            //FuzzySet cfPivo = new FuzzySet("pivo", new TrapezoidalFunction(6, 6, 6));
-            //LinguisticVariable lvPosicao = new LinguisticVariable("posicao", 1, 6);
-            //lvPosicao.AddLabel(cfPontaDireita);
-            //lvPosicao.AddLabel(cfMeiaDireita);
-            //lvPosicao.AddLabel(cfCentral);
-            //lvPosicao.AddLabel(cfMeiaEsquerda);
-            //lvPosicao.AddLabel(cfPontaEsquerda);
-            //lvPosicao.AddLabel(cfPivo);
-
             // Altura
             FuzzySet cfBaixo = new FuzzySet("baixo", new TrapezoidalFunction(1.6f, 1.7f, TrapezoidalFunction.EdgeType.Right));
             FuzzySet cfMedio = new FuzzySet("medio", new TrapezoidalFunction(1.6f, 1.7f, 1.8f, 1.9f));
@@ -192,15 +177,40 @@ namespace ProjetoAnalisadorTecnicoHandbol
 
             #region .: Base de Regras :.
 
-            //ISAnaliseIndividual.NewRule("R10", "if altura is alto and forca is forte then importancia is 5-1");
-            //ISAnaliseIndividual.NewRule("R11", "if altura is medio and velocidade is rapido then importancia is 6-0");
-            //ISAnaliseIndividual.NewRule("R12", "if altura is medio and velocidade is rapido then importancia is 6-0");
-
-            //ISAnaliseColetiva.NewRule("R12", "if posicao is meiaDireita and altura is medio and velocidade is rapido then formacao is 6-0");
-
-            #endregion
-        }
-
+            ISAnaliseIndividual.NewRule("R1", "if altura is alto and forca is forte then importancia is alta");
+            ISAnaliseIndividual.NewRule("R2", "if altura is alto and forca is forte and velocidade is rapido and habilidade is bom then importancia is muitoAlta");
+            ISAnaliseIndividual.NewRule("R3", "if altura is alto and habilidade is ruim then importancia is media");
+            ISAnaliseIndividual.NewRule("R4", "if altura is medio and velocidade is rapido then importancia is alta");
+            ISAnaliseIndividual.NewRule("R5", "if altura is medio and forca is mediano and habilidade is bom and velocidade is rapido then importancia is alta");
+            ISAnaliseIndividual.NewRule("R6", "if altura is medio and velocidade is rapido then importancia is alta");
+            ISAnaliseIndividual.NewRule("R7", "if altura is medio and peso is leve then importancia is media");
+            ISAnaliseIndividual.NewRule("R8", "if altura is baixo and velocidade is lento then importancia is baixa");
+            ISAnaliseIndividual.NewRule("R9", "if altura is baixo and habilidade is regular and velocidade is rapido then importancia is media");
+            ISAnaliseIndividual.NewRule("R11", "if peso is leve and habilidade is bom and velocidade is rapido then importancia is alta");
+            ISAnaliseIndividual.NewRule("R12", "if peso is emForma and forca is forte and velocidade is rapido then importancia is muitoAlta");
+            ISAnaliseIndividual.NewRule("R13", "if peso is pesado and forca is forte then importancia is alta");
+            ISAnaliseIndividual.NewRule("R14", "if peso is leve and habilidade is regular and velocidade is comum then importancia is media");
+            ISAnaliseIndividual.NewRule("R15", "if peso is pesado and habilidade is regular then importancia is media");
+            ISAnaliseIndividual.NewRule("R16", "if peso is emForma and velocidade is lento then importancia is media");
+            ISAnaliseIndividual.NewRule("R17", "if peso is emForma and velocidade is lento and habilidade is ruim then importancia is muitoBaixa");
+                                           
+            ISAnaliseColetiva.NewRule("R1", "if importanciaCentral is alta and importanciaMeiaDireita is alta and importanciaMeiaEsquerda is alta then formacao is 5-1");
+            ISAnaliseColetiva.NewRule("R2", "if importanciaPivo is alta or importanciaPivo is muitoAlta then formacao is 6-0");
+            ISAnaliseColetiva.NewRule("R3", "if importanciaMeiaDireita is media or importanciaMeiaEsquerda is media then formacao is 6-0");
+            ISAnaliseColetiva.NewRule("R4", "if importanciaMeiaDireita is media or importanciaMeiaEsquerda is media then formacao is 6-0");
+            ISAnaliseColetiva.NewRule("R5", "if importanciaPontaDireita is alta and importanciaPontaEsquerda is alta then formacao is 6-0");
+            ISAnaliseColetiva.NewRule("R6", "if importanciaPontaDireita is muitoAlta and importanciaPontaEsquerda is muitoAlta then formacao is 6-0");
+            ISAnaliseColetiva.NewRule("R7", "if importanciaPontaDireita is baixa and importanciaPontaEsquerda is baixa and importanciaPivo is baixa then formacao is 3-3");
+            ISAnaliseColetiva.NewRule("R8", "if importanciaPontaDireita is muitoBaixa and importanciaPontaEsquerda is muitoBaixa and importanciaPivo is muitoBaixa then formacao is 3-3");
+            ISAnaliseColetiva.NewRule("R9", "if importanciaPivo is media then formacao is 5-1");
+            ISAnaliseColetiva.NewRule("R12", "if importanciaCentral is muitoAlta or importanciaMeiaDireita is muitoAlta or importanciaMeiaEsquerda is muitoAlta then formacao is 5+1");
+            ISAnaliseColetiva.NewRule("R13", "if importanciaCentral is muitoAlta and importanciaMeiaDireita is muitoAlta then formacao is 4+2");
+            ISAnaliseColetiva.NewRule("R14", "if importanciaCentral is muitoAlta and importanciaMeiaEsquerda is muitoAlta then formacao is 4+2");
+            ISAnaliseColetiva.NewRule("R15", "if importanciaMeiaDireita is muitoAlta and importanciaMeiaDireita is muitoAlta then formacao is 4+2");
+                                         
+            #endregion                   
+        }                                
+                                         
         public void ColocarFormacao(List<PosicaoPictureBox> posicoes, List<Jogador> jogadores)
         {
             pbxJogador1.Location = new Point(posicoes[0].posicaoX, posicoes[0].posicaoY);
@@ -253,11 +263,11 @@ namespace ProjetoAnalisadorTecnicoHandbol
             List<string> posicoes = new List<string>();
             foreach (Jogador jogador in jogadores)
             {
-                if(!posicoes.Contains(jogador.posicao))
+                if (!posicoes.Contains(jogador.posicao))
                     posicoes.Add(jogador.posicao);
             }
 
-            if(posicoes.Count >= 6)
+            if (posicoes.Count >= 6)
             {
                 foreach (var item in jogadores)
                 {
@@ -292,8 +302,11 @@ namespace ProjetoAnalisadorTecnicoHandbol
                     }
                 }
 
-                //var formacao = ISAnaliseColetiva.ExecuteInference("formacao");
+                var formacao = ISAnaliseColetiva.ExecuteInference("formacao");
                 //formacao.OutputVariable.Name
+
+
+                //ColocarFormacao
             }
         }
 
