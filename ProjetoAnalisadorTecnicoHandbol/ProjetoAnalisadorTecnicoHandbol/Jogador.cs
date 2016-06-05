@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ProjetoAnalisadorTecnicoHandbol
 {
     public class Jogador
-    {
+    {       
         public string nome { get; set; }
         public string imagem { get; set; }
         public string posicao { get; set; }

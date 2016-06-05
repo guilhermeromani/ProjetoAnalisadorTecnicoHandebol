@@ -45,16 +45,23 @@
             this.button6 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnCadastrarJogador = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtPeso = new System.Windows.Forms.TextBox();
             this.btnGerarTatica = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblVelocidade = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.lblHabilidade = new System.Windows.Forms.Label();
             this.txtForca = new System.Windows.Forms.TextBox();
             this.txtAltura = new System.Windows.Forms.TextBox();
             this.txtVelocidade = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.txtHabilidade = new System.Windows.Forms.TextBox();
+            this.txtPosicao = new System.Windows.Forms.TextBox();
             this.lstJogadores = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -67,13 +74,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtPeso = new System.Windows.Forms.TextBox();
-            this.btnCadastrarJogador = new System.Windows.Forms.Button();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtPosicao = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxJogador1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxJogador2)).BeginInit();
@@ -102,7 +102,7 @@
             // 
             this.txtTitulo.AutoSize = true;
             this.txtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitulo.Location = new System.Drawing.Point(623, 25);
+            this.txtTitulo.Location = new System.Drawing.Point(350, 25);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(277, 24);
             this.txtTitulo.TabIndex = 1;
@@ -158,7 +158,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(424, 52);
+            this.button1.Location = new System.Drawing.Point(422, 77);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;
@@ -168,7 +168,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(505, 52);
+            this.button2.Location = new System.Drawing.Point(503, 77);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 8;
@@ -178,7 +178,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(586, 52);
+            this.button3.Location = new System.Drawing.Point(584, 77);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 8;
@@ -188,7 +188,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(667, 52);
+            this.button4.Location = new System.Drawing.Point(665, 77);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 8;
@@ -198,7 +198,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(748, 52);
+            this.button5.Location = new System.Drawing.Point(746, 77);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 8;
@@ -208,7 +208,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(832, 52);
+            this.button6.Location = new System.Drawing.Point(830, 77);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 8;
@@ -254,6 +254,32 @@
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnCadastrarJogador
+            // 
+            this.btnCadastrarJogador.Location = new System.Drawing.Point(19, 205);
+            this.btnCadastrarJogador.Name = "btnCadastrarJogador";
+            this.btnCadastrarJogador.Size = new System.Drawing.Size(319, 39);
+            this.btnCadastrarJogador.TabIndex = 27;
+            this.btnCadastrarJogador.Text = "Cadastrar Jogador";
+            this.btnCadastrarJogador.UseVisualStyleBackColor = true;
+            this.btnCadastrarJogador.Click += new System.EventHandler(this.btnCadastrarJogador_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(27, 176);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(34, 13);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Peso:";
+            // 
+            // txtPeso
+            // 
+            this.txtPeso.Location = new System.Drawing.Point(94, 173);
+            this.txtPeso.Name = "txtPeso";
+            this.txtPeso.Size = new System.Drawing.Size(100, 20);
+            this.txtPeso.TabIndex = 25;
+            // 
             // btnGerarTatica
             // 
             this.btnGerarTatica.Location = new System.Drawing.Point(19, 468);
@@ -262,7 +288,7 @@
             this.btnGerarTatica.TabIndex = 24;
             this.btnGerarTatica.Text = "Gerar Tatica";
             this.btnGerarTatica.UseVisualStyleBackColor = true;
-            this.btnGerarTatica.Click += new System.EventHandler(this.button7_Click);
+            this.btnGerarTatica.Click += new System.EventHandler(this.btnGerarTatica_Click);
             // 
             // pictureBox3
             // 
@@ -299,6 +325,24 @@
             this.lblVelocidade.TabIndex = 21;
             this.lblVelocidade.Text = "Velocidade:";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(27, 43);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 13);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Posicao:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(27, 20);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 13);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Nome:";
+            // 
             // lblHabilidade
             // 
             this.lblHabilidade.AutoSize = true;
@@ -329,12 +373,26 @@
             this.txtVelocidade.Size = new System.Drawing.Size(100, 20);
             this.txtVelocidade.TabIndex = 17;
             // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(94, 17);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(100, 20);
+            this.txtNome.TabIndex = 18;
+            // 
             // txtHabilidade
             // 
             this.txtHabilidade.Location = new System.Drawing.Point(94, 66);
             this.txtHabilidade.Name = "txtHabilidade";
             this.txtHabilidade.Size = new System.Drawing.Size(100, 20);
             this.txtHabilidade.TabIndex = 18;
+            // 
+            // txtPosicao
+            // 
+            this.txtPosicao.Location = new System.Drawing.Point(94, 40);
+            this.txtPosicao.Name = "txtPosicao";
+            this.txtPosicao.Size = new System.Drawing.Size(100, 20);
+            this.txtPosicao.TabIndex = 18;
             // 
             // lstJogadores
             // 
@@ -343,6 +401,7 @@
             this.lstJogadores.Name = "lstJogadores";
             this.lstJogadores.Size = new System.Drawing.Size(319, 212);
             this.lstJogadores.TabIndex = 14;
+            this.lstJogadores.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lstJogadores_MouseDown);
             // 
             // tabPage2
             // 
@@ -443,64 +502,6 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(319, 303);
             this.listBox1.TabIndex = 4;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(27, 176);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(34, 13);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "Peso:";
-            // 
-            // txtPeso
-            // 
-            this.txtPeso.Location = new System.Drawing.Point(94, 173);
-            this.txtPeso.Name = "txtPeso";
-            this.txtPeso.Size = new System.Drawing.Size(100, 20);
-            this.txtPeso.TabIndex = 25;
-            // 
-            // btnCadastrarJogador
-            // 
-            this.btnCadastrarJogador.Location = new System.Drawing.Point(19, 205);
-            this.btnCadastrarJogador.Name = "btnCadastrarJogador";
-            this.btnCadastrarJogador.Size = new System.Drawing.Size(319, 39);
-            this.btnCadastrarJogador.TabIndex = 27;
-            this.btnCadastrarJogador.Text = "Cadastrar Jogador";
-            this.btnCadastrarJogador.UseVisualStyleBackColor = true;
-            this.btnCadastrarJogador.Click += new System.EventHandler(this.btnCadastrarJogador_Click);
-            // 
-            // txtNome
-            // 
-            this.txtNome.Location = new System.Drawing.Point(94, 17);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(100, 20);
-            this.txtNome.TabIndex = 18;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(27, 20);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 13);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Nome:";
-            // 
-            // txtPosicao
-            // 
-            this.txtPosicao.Location = new System.Drawing.Point(94, 40);
-            this.txtPosicao.Name = "txtPosicao";
-            this.txtPosicao.Size = new System.Drawing.Size(100, 20);
-            this.txtPosicao.TabIndex = 18;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(27, 43);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 13);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "Posicao:";
             // 
             // Form1
             // 

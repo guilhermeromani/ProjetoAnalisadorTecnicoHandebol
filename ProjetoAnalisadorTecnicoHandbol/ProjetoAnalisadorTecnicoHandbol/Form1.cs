@@ -19,6 +19,7 @@ namespace ProjetoAnalisadorTecnicoHandbol
         public InferenceSystem ISAnaliseIndividual;
         public InferenceSystem ISAnaliseColetiva;
 
+        string nomeJogadorParaAlterar = String.Empty;
         public Form1()
         {
             InitializeComponent();
@@ -203,17 +204,17 @@ namespace ProjetoAnalisadorTecnicoHandbol
         public void ColocarFormacao(List<PosicaoPictureBox> posicoes, List<Jogador> jogadores)
         {
             pbxJogador1.Location = new Point(posicoes[0].posicaoX, posicoes[0].posicaoY);
-            //pbxJogador1.Image = Image.FromFile("..//..//imagens//" + jogadores[0].imagem);
+            pbxJogador1.Image = Image.FromFile("..//..//imagens//playerhandbol.jpg");
             pbxJogador2.Location = new Point(posicoes[1].posicaoX, posicoes[1].posicaoY);
-            //pbxJogador2.Image = Image.FromFile("..//..//imagens//" + jogadores[1].imagem);
+            pbxJogador2.Image = Image.FromFile("..//..//imagens//playerhandbol.jpg");
             pbxJogador3.Location = new Point(posicoes[2].posicaoX, posicoes[2].posicaoY);
-            //pbxJogador3.Image = Image.FromFile("..//..//imagens//" + jogadores[2].imagem);
+            pbxJogador3.Image = Image.FromFile("..//..//imagens//playerhandbol.jpg");
             pbxJogador4.Location = new Point(posicoes[3].posicaoX, posicoes[3].posicaoY);
-            //pbxJogador4.Image = Image.FromFile("..//..//imagens//" + jogadores[3].imagem);
+            pbxJogador4.Image = Image.FromFile("..//..//imagens//playerhandbol.jpg");
             pbxJogador5.Location = new Point(posicoes[4].posicaoX, posicoes[4].posicaoY);
-            //pbxJogador5.Image = Image.FromFile("..//..//imagens//" + jogadores[4].imagem);
+            pbxJogador5.Image = Image.FromFile("..//..//imagens//playerhandbol.jpg");
             pbxJogador6.Location = new Point(posicoes[5].posicaoX, posicoes[5].posicaoY);
-            //pbxJogador6.Image = Image.FromFile("..//..//imagens//" + jogadores[5].imagem);
+            pbxJogador6.Image = Image.FromFile("..//..//imagens//playerhandbol.jpg");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -246,63 +247,117 @@ namespace ProjetoAnalisadorTecnicoHandbol
             ColocarFormacao(formacao.formacao4plus2, jogadores);
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void btnGerarTatica_Click(object sender, EventArgs e)
         {
-            foreach (var item in jogadores)
+            // Verificação de quantidade de jogadores exatos
+            List<string> posicoes = new List<string>();
+            foreach (Jogador jogador in jogadores)
             {
-                ISAnaliseIndividual.GetLinguisticVariable("habilidade").NumericInput = Convert.ToInt32("x1");
-                ISAnaliseIndividual.GetLinguisticVariable("velocidade").NumericInput = Convert.ToInt32("x2");
-                ISAnaliseIndividual.GetLinguisticVariable("altura").NumericInput = Convert.ToInt32("x3");
-                ISAnaliseIndividual.GetLinguisticVariable("forca").NumericInput = Convert.ToInt32("x4");
-                ISAnaliseIndividual.GetLinguisticVariable("peso").NumericInput = Convert.ToInt32("x5");
-
-                var importancia = ISAnaliseIndividual.Evaluate("importancia");
-
-                switch (item.posicao)
-                {
-                    case "pontaDireita":
-                        ISAnaliseColetiva.GetLinguisticVariable("importanciaPontaDireita").NumericInput = importancia;
-                        break;
-                    case "meiaDireita":
-                        ISAnaliseColetiva.GetLinguisticVariable("importanciaMeiaDireita").NumericInput = importancia;
-                        break;
-                    case "central":
-                        ISAnaliseColetiva.GetLinguisticVariable("importanciaCentral").NumericInput = importancia;
-                        break;
-                    case "meiaEsquerda":
-                        ISAnaliseColetiva.GetLinguisticVariable("importanciaMeiaEsquerda").NumericInput = importancia;
-                        break;
-                    case "pontaEsquerda":
-                        ISAnaliseColetiva.GetLinguisticVariable("importanciaPontaEsquerda").NumericInput = importancia;
-                        break;
-                    case "pivo":
-                        ISAnaliseColetiva.GetLinguisticVariable("importanciaPivo").NumericInput = importancia;
-                        break;
-                }
+                if(!posicoes.Contains(jogador.posicao))
+                    posicoes.Add(jogador.posicao);
             }
 
-            //var formacao = ISAnaliseIndividual.ExecuteInference("formacao");
-            //formacao.OutputVariable.Name
+            if(posicoes.Count >= 6)
+            {
+                foreach (var item in jogadores)
+                {
+                    ISAnaliseIndividual.GetLinguisticVariable("habilidade").NumericInput = Convert.ToInt32("x1");
+                    ISAnaliseIndividual.GetLinguisticVariable("velocidade").NumericInput = Convert.ToInt32("x2");
+                    ISAnaliseIndividual.GetLinguisticVariable("altura").NumericInput = Convert.ToInt32("x3");
+                    ISAnaliseIndividual.GetLinguisticVariable("forca").NumericInput = Convert.ToInt32("x4");
+                    ISAnaliseIndividual.GetLinguisticVariable("peso").NumericInput = Convert.ToInt32("x5");
 
+                    var importancia = ISAnaliseIndividual.Evaluate("importancia");
+
+                    switch (item.posicao)
+                    {
+                        case "pontaDireita":
+                            ISAnaliseColetiva.GetLinguisticVariable("importanciaPontaDireita").NumericInput = importancia;
+                            break;
+                        case "meiaDireita":
+                            ISAnaliseColetiva.GetLinguisticVariable("importanciaMeiaDireita").NumericInput = importancia;
+                            break;
+                        case "central":
+                            ISAnaliseColetiva.GetLinguisticVariable("importanciaCentral").NumericInput = importancia;
+                            break;
+                        case "meiaEsquerda":
+                            ISAnaliseColetiva.GetLinguisticVariable("importanciaMeiaEsquerda").NumericInput = importancia;
+                            break;
+                        case "pontaEsquerda":
+                            ISAnaliseColetiva.GetLinguisticVariable("importanciaPontaEsquerda").NumericInput = importancia;
+                            break;
+                        case "pivo":
+                            ISAnaliseColetiva.GetLinguisticVariable("importanciaPivo").NumericInput = importancia;
+                            break;
+                    }
+                }
+
+                //var formacao = ISAnaliseColetiva.ExecuteInference("formacao");
+                //formacao.OutputVariable.Name
+            }
         }
 
         private void btnCadastrarJogador_Click(object sender, EventArgs e)
         {
-            jogadores.Add(new Jogador(txtNome.Text,
-                                                  String.Empty,
-                                                  txtPosicao.Text,
-                                                  Convert.ToInt32(txtHabilidade.Text),
-                                                  Convert.ToInt32(txtVelocidade.Text),
-                                                  Convert.ToInt32(txtAltura.Text),
-                                                  Convert.ToInt32(txtForca.Text),
-                                                  Convert.ToInt32(txtPeso.Text)
-                                                  ));
+
+            Jogador jogador = new Jogador(txtNome.Text,
+                                                    String.Empty,
+                                                    txtPosicao.Text,
+                                                    Convert.ToInt32(txtHabilidade.Text),
+                                                    Convert.ToInt32(txtVelocidade.Text),
+                                                    Convert.ToInt32(txtAltura.Text),
+                                                    Convert.ToInt32(txtForca.Text),
+                                                    Convert.ToInt32(txtPeso.Text)
+                                                    );
+            if (btnCadastrarJogador.Text.Equals("Cadastrar Jogador"))
+                jogadores.Add(jogador);
+            else
+            {
+                for (int i = 0; i < jogadores.Count; i++)
+                {
+                    if (jogadores[i].nome.Equals(nomeJogadorParaAlterar))
+                    {
+                        jogadores[i] = jogador;
+                    }
+                }
+                btnCadastrarJogador.Text = "Cadastrar Jogador";
+            }
+
             List<string> nomesJogadores = new List<string>();
             foreach (Jogador jogadores in jogadores)
             {
                 nomesJogadores.Add(jogadores.nome);
             }
             lstJogadores.DataSource = nomesJogadores;
+            lstJogadores.Refresh();
+        }
+
+        private void lstJogadores_MouseDown(object sender, MouseEventArgs e)
+        {
+            ListBox listbox = (ListBox)sender;
+            Jogador auxiliar;
+
+            auxiliar = jogadores[0];
+            String nomeBusca = listbox.SelectedItem.ToString();
+            foreach (Jogador jogador in jogadores)
+            {
+                if (jogador.nome.Equals(nomeBusca))
+                {
+                    auxiliar = jogador;
+                }
+            }
+
+            txtNome.Text = auxiliar.nome;
+            txtPosicao.Text = auxiliar.posicao;
+            txtHabilidade.Text = auxiliar.habilidade.ToString();
+            txtVelocidade.Text = auxiliar.velocidade.ToString();
+            txtAltura.Text = auxiliar.altura.ToString();
+            txtForca.Text = auxiliar.forca.ToString();
+            txtPeso.Text = auxiliar.peso.ToString();
+
+            nomeJogadorParaAlterar = auxiliar.nome;
+
+            btnCadastrarJogador.Text = "Alterar Jogador";
         }
     }
 }
