@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -193,7 +194,7 @@ namespace ProjetoAnalisadorTecnicoHandbol
             ISAnaliseIndividual.NewRule("R15", "if peso is pesado and habilidade is regular then importancia is media");
             ISAnaliseIndividual.NewRule("R16", "if peso is emForma and velocidade is lento then importancia is media");
             ISAnaliseIndividual.NewRule("R17", "if peso is emForma and velocidade is lento and habilidade is ruim then importancia is muitoBaixa");
-                                           
+
             ISAnaliseColetiva.NewRule("R1", "if importanciaCentral is alta and importanciaMeiaDireita is alta and importanciaMeiaEsquerda is alta then formacao is 5-1");
             ISAnaliseColetiva.NewRule("R2", "if importanciaPivo is alta or importanciaPivo is muitoAlta then formacao is 6-0");
             ISAnaliseColetiva.NewRule("R3", "if importanciaMeiaDireita is media or importanciaMeiaEsquerda is media then formacao is 6-0");
@@ -207,10 +208,10 @@ namespace ProjetoAnalisadorTecnicoHandbol
             ISAnaliseColetiva.NewRule("R13", "if importanciaCentral is muitoAlta and importanciaMeiaDireita is muitoAlta then formacao is 4+2");
             ISAnaliseColetiva.NewRule("R14", "if importanciaCentral is muitoAlta and importanciaMeiaEsquerda is muitoAlta then formacao is 4+2");
             ISAnaliseColetiva.NewRule("R15", "if importanciaMeiaDireita is muitoAlta and importanciaMeiaDireita is muitoAlta then formacao is 4+2");
-                                         
-            #endregion                   
-        }                                
-                                         
+
+            #endregion
+        }
+
         public void ColocarFormacao(List<PosicaoPictureBox> posicoes, List<Jogador> jogadores)
         {
             pbxJogador1.Location = new Point(posicoes[0].posicaoX, posicoes[0].posicaoY);
@@ -271,78 +272,80 @@ namespace ProjetoAnalisadorTecnicoHandbol
             {
                 foreach (var item in jogadores)
                 {
-                    ISAnaliseIndividual.GetLinguisticVariable("habilidade").NumericInput = Convert.ToInt32("x1");
-                    ISAnaliseIndividual.GetLinguisticVariable("velocidade").NumericInput = Convert.ToInt32("x2");
-                    ISAnaliseIndividual.GetLinguisticVariable("altura").NumericInput = Convert.ToInt32("x3");
-                    ISAnaliseIndividual.GetLinguisticVariable("forca").NumericInput = Convert.ToInt32("x4");
-                    ISAnaliseIndividual.GetLinguisticVariable("peso").NumericInput = Convert.ToInt32("x5");
+                    ISAnaliseIndividual.GetLinguisticVariable("habilidade").NumericInput = item.habilidade;
+                    ISAnaliseIndividual.GetLinguisticVariable("velocidade").NumericInput = item.velocidade;
+                    ISAnaliseIndividual.GetLinguisticVariable("altura").NumericInput = item.altura;
+                    ISAnaliseIndividual.GetLinguisticVariable("forca").NumericInput = item.forca;
+                    ISAnaliseIndividual.GetLinguisticVariable("peso").NumericInput = item.peso;
 
                     var importancia = ISAnaliseIndividual.Evaluate("importancia");
 
                     switch (item.posicao)
                     {
-                        case "pontaDireita":
+                        case "Ponta Direita":
                             ISAnaliseColetiva.GetLinguisticVariable("importanciaPontaDireita").NumericInput = importancia;
                             break;
-                        case "meiaDireita":
+                        case "Meia Direita":
                             ISAnaliseColetiva.GetLinguisticVariable("importanciaMeiaDireita").NumericInput = importancia;
                             break;
-                        case "central":
+                        case "Central":
                             ISAnaliseColetiva.GetLinguisticVariable("importanciaCentral").NumericInput = importancia;
                             break;
-                        case "meiaEsquerda":
+                        case "Meia Esquerda":
                             ISAnaliseColetiva.GetLinguisticVariable("importanciaMeiaEsquerda").NumericInput = importancia;
                             break;
-                        case "pontaEsquerda":
+                        case "Ponta Esquerda":
                             ISAnaliseColetiva.GetLinguisticVariable("importanciaPontaEsquerda").NumericInput = importancia;
                             break;
-                        case "pivo":
+                        case "Pivo":
                             ISAnaliseColetiva.GetLinguisticVariable("importanciaPivo").NumericInput = importancia;
                             break;
                     }
                 }
 
-                var formacao = ISAnaliseColetiva.ExecuteInference("formacao");
-                //formacao.OutputVariable.Name
+                var formacaoFinal = ISAnaliseColetiva.ExecuteInference("formacao");
+                Dictionary<string, float> saida = new Dictionary<string, float>();
 
+                foreach (var item in formacaoFinal.OutputList)
+                {
+                    if (!saida.ContainsKey(item.Label))
+                        saida.Add(item.Label, item.FiringStrength);
+                    else
+                        saida[item.Label] += item.FiringStrength;
+                }
 
-                //ColocarFormacao
+                ColocarFormacao(formacao.RetornarFormacao(saida.OrderBy(x => x.Value).FirstOrDefault().Key), jogadores);
             }
         }
 
         private void btnCadastrarJogador_Click(object sender, EventArgs e)
         {
+            if (ValidarEntradas())
+            {
+                Jogador jogador = new Jogador(txtNome.Text,
+                                                        String.Empty,
+                                                        cmbPosicao.SelectedItem.ToString(),
+                                                        float.Parse(txtHabilidade.Text, CultureInfo.InvariantCulture),
+                                                        float.Parse(txtVelocidade.Text, CultureInfo.InvariantCulture),
+                                                        float.Parse(txtAltura.Text, CultureInfo.InvariantCulture),
+                                                        float.Parse(txtForca.Text, CultureInfo.InvariantCulture),
+                                                        float.Parse(txtPeso.Text, CultureInfo.InvariantCulture)
+                                                        );
 
-            Jogador jogador = new Jogador(txtNome.Text,
-                                                    String.Empty,
-                                                    txtPosicao.Text,
-                                                    Convert.ToInt32(txtHabilidade.Text),
-                                                    Convert.ToInt32(txtVelocidade.Text),
-                                                    Convert.ToInt32(txtAltura.Text),
-                                                    Convert.ToInt32(txtForca.Text),
-                                                    Convert.ToInt32(txtPeso.Text)
-                                                    );
-            if (btnCadastrarJogador.Text.Equals("Cadastrar Jogador"))
+                var jogadorSubstituir = jogadores.Where(x => x.posicao == jogador.posicao).FirstOrDefault();
+                if (jogadorSubstituir != null)
+                    jogadores.Remove(jogadorSubstituir);
+
                 jogadores.Add(jogador);
-            else
-            {
-                for (int i = 0; i < jogadores.Count; i++)
-                {
-                    if (jogadores[i].nome.Equals(nomeJogadorParaAlterar))
-                    {
-                        jogadores[i] = jogador;
-                    }
-                }
-                btnCadastrarJogador.Text = "Cadastrar Jogador";
-            }
 
-            List<string> nomesJogadores = new List<string>();
-            foreach (Jogador jogadores in jogadores)
-            {
-                nomesJogadores.Add(jogadores.nome);
+                List<string> nomesJogadores = new List<string>();
+                foreach (Jogador jogadores in jogadores)
+                {
+                    nomesJogadores.Add($"{jogadores.nome} - ({jogadores.posicao})");
+                }
+                lstJogadores.DataSource = nomesJogadores;
+                lstJogadores.Refresh();
             }
-            lstJogadores.DataSource = nomesJogadores;
-            lstJogadores.Refresh();
         }
 
         private void lstJogadores_MouseDown(object sender, MouseEventArgs e)
@@ -361,7 +364,7 @@ namespace ProjetoAnalisadorTecnicoHandbol
             }
 
             txtNome.Text = auxiliar.nome;
-            txtPosicao.Text = auxiliar.posicao;
+            //txtPosicao.Text = auxiliar.posicao;
             txtHabilidade.Text = auxiliar.habilidade.ToString();
             txtVelocidade.Text = auxiliar.velocidade.ToString();
             txtAltura.Text = auxiliar.altura.ToString();
@@ -372,5 +375,95 @@ namespace ProjetoAnalisadorTecnicoHandbol
 
             btnCadastrarJogador.Text = "Alterar Jogador";
         }
+
+        #region .: Validar :.
+
+        private bool ValidarEntradas()
+        {
+            bool isValido = true;
+            decimal value = 0;
+
+            if (string.IsNullOrEmpty(txtNome.Text))
+            {
+                MessageBox.Show("Um Nome é necessário");
+                isValido = false;
+            }
+            if (cmbPosicao.SelectedItem == null)
+            {
+                MessageBox.Show("Uma Posição tem que ser escolhida.");
+                isValido = false;
+            }
+            if (!decimal.TryParse(txtHabilidade.Text, out value))
+            {
+                MessageBox.Show("Campo Habilidade esta no formato errado.");
+                isValido = false;
+            }
+            if (!decimal.TryParse(txtVelocidade.Text, out value))
+            {
+                MessageBox.Show("Campo Velocidade esta no formato errado.");
+                isValido = false;
+            }
+            if (!decimal.TryParse(txtAltura.Text, out value))
+            {
+                MessageBox.Show("Campo Altura esta no formato errado.");
+                isValido = false;
+            }
+            if (!decimal.TryParse(txtForca.Text, out value))
+            {
+                MessageBox.Show("Campo Força esta no formato errado.");
+                isValido = false;
+            }
+            if (!decimal.TryParse(txtPeso.Text, out value))
+            {
+                MessageBox.Show("Campo Peso esta no formato errado.");
+                isValido = false;
+            }
+
+            return isValido;
+        }
+        #endregion
+
+        #region .: Validar Entradas Numericas :.
+
+        private void txtHabilidade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarNumerico(sender, e);
+        }
+
+        private void txtVelocidade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarNumerico(sender, e);
+        }
+
+        private void txtAltura_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarNumerico(sender, e);
+        }
+
+        private void txtForca_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarNumerico(sender, e);
+        }
+
+        private void txtPeso_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarNumerico(sender, e);
+        }
+
+        private void ValidarNumerico(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+        #endregion
+
     }
 }

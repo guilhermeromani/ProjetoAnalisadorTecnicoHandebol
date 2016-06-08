@@ -11,13 +11,13 @@ namespace ProjetoAnalisadorTecnicoHandbol
         public string nome { get; set; }
         public string imagem { get; set; }
         public string posicao { get; set; }
-        public decimal habilidade { get; set; }
-        public decimal velocidade { get; set; }
-        public decimal altura { get; set; }
-        public decimal forca { get; set; }
-        public decimal peso { get; set; }
+        public float habilidade { get; set; }
+        public float velocidade { get; set; }
+        public float altura { get; set; }
+        public float forca { get; set; }
+        public float peso { get; set; }
 
-        public Jogador(string nome, string imagem, string posicao, decimal habilidade, decimal velocidade, decimal altura, decimal forca, decimal peso)
+        public Jogador(string nome, string imagem, string posicao, float habilidade, float velocidade, float altura, float forca, float peso)
         {
             this.nome = nome;
             this.imagem = imagem;

@@ -74,6 +74,27 @@ namespace ProjetoAnalisadorTecnicoHandbol
 
         }
         //ExibirFormacao
+
+        public List<PosicaoPictureBox> RetornarFormacao(string nome)
+        {
+            switch(nome)
+            {
+                case "6-0":
+                    return formacao6x0;
+                case "5-1":
+                    return formacao5x1;
+                case "4-2":
+                    return formacao4x2;
+                case "3-3":
+                    return formacao3x3;
+                case "4+2":
+                    return formacao4plus2;
+                case "5+1":
+                    return formacao5plus1;
+                default:
+                    return null;
+            }
+        }
     }
 }
 

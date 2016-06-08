@@ -43,37 +43,26 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnCadastrarJogador = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtPeso = new System.Windows.Forms.TextBox();
-            this.btnGerarTatica = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblVelocidade = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblHabilidade = new System.Windows.Forms.Label();
-            this.txtForca = new System.Windows.Forms.TextBox();
-            this.txtAltura = new System.Windows.Forms.TextBox();
-            this.txtVelocidade = new System.Windows.Forms.TextBox();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtHabilidade = new System.Windows.Forms.TextBox();
-            this.txtPosicao = new System.Windows.Forms.TextBox();
             this.lstJogadores = new System.Windows.Forms.ListBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.txtHabilidade = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtVelocidade = new System.Windows.Forms.TextBox();
+            this.txtAltura = new System.Windows.Forms.TextBox();
+            this.txtForca = new System.Windows.Forms.TextBox();
+            this.lblHabilidade = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblVelocidade = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnGerarTatica = new System.Windows.Forms.Button();
+            this.txtPeso = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnCadastrarJogador = new System.Windows.Forms.Button();
+            this.cmbPosicao = new System.Windows.Forms.ComboBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxJogador1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxJogador2)).BeginInit();
@@ -81,11 +70,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxJogador4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxJogador5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxJogador6)).BeginInit();
-            this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -216,21 +203,17 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 45);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(365, 597);
-            this.tabControl1.TabIndex = 9;
-            // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.cmbPosicao);
             this.tabPage1.Controls.Add(this.btnCadastrarJogador);
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.txtPeso);
+            this.tabPage1.Controls.Add(this.txtForca);
+            this.tabPage1.Controls.Add(this.txtAltura);
+            this.tabPage1.Controls.Add(this.txtVelocidade);
+            this.tabPage1.Controls.Add(this.txtNome);
+            this.tabPage1.Controls.Add(this.txtHabilidade);
             this.tabPage1.Controls.Add(this.btnGerarTatica);
             this.tabPage1.Controls.Add(this.pictureBox3);
             this.tabPage1.Controls.Add(this.label5);
@@ -239,109 +222,62 @@
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.lblHabilidade);
-            this.tabPage1.Controls.Add(this.txtForca);
-            this.tabPage1.Controls.Add(this.txtAltura);
-            this.tabPage1.Controls.Add(this.txtVelocidade);
-            this.tabPage1.Controls.Add(this.txtNome);
-            this.tabPage1.Controls.Add(this.txtHabilidade);
-            this.tabPage1.Controls.Add(this.txtPosicao);
             this.tabPage1.Controls.Add(this.lstJogadores);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(357, 571);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Cadastro Atletas";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // btnCadastrarJogador
+            // lstJogadores
             // 
-            this.btnCadastrarJogador.Location = new System.Drawing.Point(19, 205);
-            this.btnCadastrarJogador.Name = "btnCadastrarJogador";
-            this.btnCadastrarJogador.Size = new System.Drawing.Size(319, 39);
-            this.btnCadastrarJogador.TabIndex = 27;
-            this.btnCadastrarJogador.Text = "Cadastrar Jogador";
-            this.btnCadastrarJogador.UseVisualStyleBackColor = true;
-            this.btnCadastrarJogador.Click += new System.EventHandler(this.btnCadastrarJogador_Click);
+            this.lstJogadores.FormattingEnabled = true;
+            this.lstJogadores.Location = new System.Drawing.Point(19, 250);
+            this.lstJogadores.Name = "lstJogadores";
+            this.lstJogadores.Size = new System.Drawing.Size(319, 212);
+            this.lstJogadores.TabIndex = 10;
+            this.lstJogadores.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lstJogadores_MouseDown);
             // 
-            // label9
+            // txtHabilidade
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(27, 176);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(34, 13);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "Peso:";
+            this.txtHabilidade.Location = new System.Drawing.Point(94, 66);
+            this.txtHabilidade.Name = "txtHabilidade";
+            this.txtHabilidade.Size = new System.Drawing.Size(100, 20);
+            this.txtHabilidade.TabIndex = 3;
+            this.txtHabilidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHabilidade_KeyPress);
             // 
-            // txtPeso
+            // txtNome
             // 
-            this.txtPeso.Location = new System.Drawing.Point(94, 173);
-            this.txtPeso.Name = "txtPeso";
-            this.txtPeso.Size = new System.Drawing.Size(100, 20);
-            this.txtPeso.TabIndex = 25;
+            this.txtNome.Location = new System.Drawing.Point(94, 17);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(100, 20);
+            this.txtNome.TabIndex = 1;
             // 
-            // btnGerarTatica
+            // txtVelocidade
             // 
-            this.btnGerarTatica.Location = new System.Drawing.Point(19, 468);
-            this.btnGerarTatica.Name = "btnGerarTatica";
-            this.btnGerarTatica.Size = new System.Drawing.Size(319, 51);
-            this.btnGerarTatica.TabIndex = 24;
-            this.btnGerarTatica.Text = "Gerar Tatica";
-            this.btnGerarTatica.UseVisualStyleBackColor = true;
-            this.btnGerarTatica.Click += new System.EventHandler(this.btnGerarTatica_Click);
+            this.txtVelocidade.Location = new System.Drawing.Point(94, 93);
+            this.txtVelocidade.Name = "txtVelocidade";
+            this.txtVelocidade.Size = new System.Drawing.Size(100, 20);
+            this.txtVelocidade.TabIndex = 4;
+            this.txtVelocidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVelocidade_KeyPress);
             // 
-            // pictureBox3
+            // txtAltura
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(209, 17);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(129, 173);
-            this.pictureBox3.TabIndex = 23;
-            this.pictureBox3.TabStop = false;
+            this.txtAltura.Location = new System.Drawing.Point(94, 120);
+            this.txtAltura.Name = "txtAltura";
+            this.txtAltura.Size = new System.Drawing.Size(100, 20);
+            this.txtAltura.TabIndex = 5;
+            this.txtAltura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAltura_KeyPress);
             // 
-            // label5
+            // txtForca
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 149);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 13);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Força:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(27, 123);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 13);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "Altura:";
-            // 
-            // lblVelocidade
-            // 
-            this.lblVelocidade.AutoSize = true;
-            this.lblVelocidade.Location = new System.Drawing.Point(27, 93);
-            this.lblVelocidade.Name = "lblVelocidade";
-            this.lblVelocidade.Size = new System.Drawing.Size(63, 13);
-            this.lblVelocidade.TabIndex = 21;
-            this.lblVelocidade.Text = "Velocidade:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(27, 43);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 13);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "Posicao:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(27, 20);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 13);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Nome:";
+            this.txtForca.Location = new System.Drawing.Point(94, 146);
+            this.txtForca.Name = "txtForca";
+            this.txtForca.Size = new System.Drawing.Size(100, 20);
+            this.txtForca.TabIndex = 6;
+            this.txtForca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtForca_KeyPress);
             // 
             // lblHabilidade
             // 
@@ -352,156 +288,119 @@
             this.lblHabilidade.TabIndex = 22;
             this.lblHabilidade.Text = "Habilidade:";
             // 
-            // txtForca
+            // label7
             // 
-            this.txtForca.Location = new System.Drawing.Point(94, 146);
-            this.txtForca.Name = "txtForca";
-            this.txtForca.Size = new System.Drawing.Size(100, 20);
-            this.txtForca.TabIndex = 15;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(27, 20);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 13);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Nome:";
             // 
-            // txtAltura
+            // label8
             // 
-            this.txtAltura.Location = new System.Drawing.Point(94, 120);
-            this.txtAltura.Name = "txtAltura";
-            this.txtAltura.Size = new System.Drawing.Size(100, 20);
-            this.txtAltura.TabIndex = 16;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(27, 43);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 13);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Posicao:";
             // 
-            // txtVelocidade
+            // lblVelocidade
             // 
-            this.txtVelocidade.Location = new System.Drawing.Point(94, 93);
-            this.txtVelocidade.Name = "txtVelocidade";
-            this.txtVelocidade.Size = new System.Drawing.Size(100, 20);
-            this.txtVelocidade.TabIndex = 17;
+            this.lblVelocidade.AutoSize = true;
+            this.lblVelocidade.Location = new System.Drawing.Point(27, 93);
+            this.lblVelocidade.Name = "lblVelocidade";
+            this.lblVelocidade.Size = new System.Drawing.Size(63, 13);
+            this.lblVelocidade.TabIndex = 21;
+            this.lblVelocidade.Text = "Velocidade:";
             // 
-            // txtNome
+            // label6
             // 
-            this.txtNome.Location = new System.Drawing.Point(94, 17);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(100, 20);
-            this.txtNome.TabIndex = 18;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(27, 123);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 13);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Altura:";
             // 
-            // txtHabilidade
+            // label5
             // 
-            this.txtHabilidade.Location = new System.Drawing.Point(94, 66);
-            this.txtHabilidade.Name = "txtHabilidade";
-            this.txtHabilidade.Size = new System.Drawing.Size(100, 20);
-            this.txtHabilidade.TabIndex = 18;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(27, 149);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(37, 13);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Força:";
             // 
-            // txtPosicao
+            // pictureBox3
             // 
-            this.txtPosicao.Location = new System.Drawing.Point(94, 40);
-            this.txtPosicao.Name = "txtPosicao";
-            this.txtPosicao.Size = new System.Drawing.Size(100, 20);
-            this.txtPosicao.TabIndex = 18;
+            this.pictureBox3.Location = new System.Drawing.Point(209, 17);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(129, 173);
+            this.pictureBox3.TabIndex = 23;
+            this.pictureBox3.TabStop = false;
             // 
-            // lstJogadores
+            // btnGerarTatica
             // 
-            this.lstJogadores.FormattingEnabled = true;
-            this.lstJogadores.Location = new System.Drawing.Point(19, 250);
-            this.lstJogadores.Name = "lstJogadores";
-            this.lstJogadores.Size = new System.Drawing.Size(319, 212);
-            this.lstJogadores.TabIndex = 14;
-            this.lstJogadores.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lstJogadores_MouseDown);
+            this.btnGerarTatica.Location = new System.Drawing.Point(19, 468);
+            this.btnGerarTatica.Name = "btnGerarTatica";
+            this.btnGerarTatica.Size = new System.Drawing.Size(319, 51);
+            this.btnGerarTatica.TabIndex = 9;
+            this.btnGerarTatica.Text = "Gerar Tatica";
+            this.btnGerarTatica.UseVisualStyleBackColor = true;
+            this.btnGerarTatica.Click += new System.EventHandler(this.btnGerarTatica_Click);
             // 
-            // tabPage2
+            // txtPeso
             // 
-            this.tabPage2.Controls.Add(this.pictureBox2);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.textBox4);
-            this.tabPage2.Controls.Add(this.textBox3);
-            this.tabPage2.Controls.Add(this.textBox2);
-            this.tabPage2.Controls.Add(this.textBox1);
-            this.tabPage2.Controls.Add(this.listBox1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(357, 571);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.txtPeso.Location = new System.Drawing.Point(94, 173);
+            this.txtPeso.Name = "txtPeso";
+            this.txtPeso.Size = new System.Drawing.Size(100, 20);
+            this.txtPeso.TabIndex = 7;
+            this.txtPeso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPeso_KeyPress);
             // 
-            // pictureBox2
+            // label9
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(214, 51);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(99, 108);
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(27, 176);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(34, 13);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Peso:";
             // 
-            // label4
+            // btnCadastrarJogador
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(29, 142);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "label1";
+            this.btnCadastrarJogador.Location = new System.Drawing.Point(19, 205);
+            this.btnCadastrarJogador.Name = "btnCadastrarJogador";
+            this.btnCadastrarJogador.Size = new System.Drawing.Size(319, 39);
+            this.btnCadastrarJogador.TabIndex = 8;
+            this.btnCadastrarJogador.Text = "Cadastrar Jogador";
+            this.btnCadastrarJogador.UseVisualStyleBackColor = true;
+            this.btnCadastrarJogador.Click += new System.EventHandler(this.btnCadastrarJogador_Click);
             // 
-            // label3
+            // cmbPosicao
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 116);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "label1";
+            this.cmbPosicao.FormattingEnabled = true;
+            this.cmbPosicao.Items.AddRange(new object[] {
+            "Ponta Esquerda",
+            "Meia Esquerda",
+            "Central",
+            "Meia Direita",
+            "Ponta Direita",
+            "Pivo"});
+            this.cmbPosicao.Location = new System.Drawing.Point(94, 39);
+            this.cmbPosicao.Name = "cmbPosicao";
+            this.cmbPosicao.Size = new System.Drawing.Size(100, 21);
+            this.cmbPosicao.TabIndex = 2;
             // 
-            // label2
+            // tabControl1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 86);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "label1";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 54);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "label1";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(96, 139);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 5;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(96, 113);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 6;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(96, 86);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 7;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(96, 51);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 8;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(19, 216);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(319, 303);
-            this.listBox1.TabIndex = 4;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Location = new System.Drawing.Point(12, 45);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(365, 597);
+            this.tabControl1.TabIndex = 9;
             // 
             // Form1
             // 
@@ -523,6 +422,7 @@
             this.Controls.Add(this.pbxJogador1);
             this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.pictureBox1);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -532,13 +432,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxJogador4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxJogador5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxJogador6)).EndInit();
-            this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -560,37 +457,26 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ComboBox cmbPosicao;
+        private System.Windows.Forms.Button btnCadastrarJogador;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtPeso;
+        private System.Windows.Forms.TextBox txtForca;
+        private System.Windows.Forms.TextBox txtAltura;
+        private System.Windows.Forms.TextBox txtVelocidade;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtHabilidade;
+        private System.Windows.Forms.Button btnGerarTatica;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblVelocidade;
-        private System.Windows.Forms.Label lblHabilidade;
-        private System.Windows.Forms.TextBox txtForca;
-        private System.Windows.Forms.TextBox txtAltura;
-        private System.Windows.Forms.TextBox txtVelocidade;
-        private System.Windows.Forms.TextBox txtHabilidade;
-        private System.Windows.Forms.ListBox lstJogadores;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button btnGerarTatica;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtPeso;
-        private System.Windows.Forms.Button btnCadastrarJogador;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtPosicao;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblHabilidade;
+        private System.Windows.Forms.ListBox lstJogadores;
+        private System.Windows.Forms.TabControl tabControl1;
     }
 }
 
