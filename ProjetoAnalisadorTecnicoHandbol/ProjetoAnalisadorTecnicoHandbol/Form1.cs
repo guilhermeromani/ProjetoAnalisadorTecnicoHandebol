@@ -355,6 +355,7 @@ namespace ProjetoAnalisadorTecnicoHandbol
 
             auxiliar = jogadores[0];
             String nomeBusca = listbox.SelectedItem.ToString();
+            nomeBusca = nomeBusca.Split('-')[0].Trim();
             foreach (Jogador jogador in jogadores)
             {
                 if (jogador.nome.Equals(nomeBusca))
