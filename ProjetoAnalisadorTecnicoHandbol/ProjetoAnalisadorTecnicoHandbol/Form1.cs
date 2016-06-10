@@ -25,19 +25,26 @@ namespace ProjetoAnalisadorTecnicoHandbol
         {
             InitializeComponent();
 
+            jogadores.Add(new Jogador("A", "", "Ponta Esquerda", 2, 2, 1.7f, 3, 80));
+            jogadores.Add(new Jogador("B", "", "Meia Esquerda", 2, 2, 1.7f, 3, 80));
+            jogadores.Add(new Jogador("C", "", "Central", 10, 10, 2f, 7, 80));
+            jogadores.Add(new Jogador("D", "", "Meia Direita", 2, 2, 1.7f, 3, 80));
+            jogadores.Add(new Jogador("E", "", "Ponta Direita", 2, 2, 1.7f, 3, 80));
+            jogadores.Add(new Jogador("F", "", "Pivo", 2, 2, 1.7f, 3, 80));
+
+            List<string> nomesJogadores = new List<string>();
+            foreach (Jogador jogadores in jogadores)
+            {
+                nomesJogadores.Add($"{jogadores.nome} - ({jogadores.posicao})");
+            }
+            lstJogadores.DataSource = nomesJogadores;
+
             pbxJogador1.SizeMode = PictureBoxSizeMode.StretchImage;
             pbxJogador2.SizeMode = PictureBoxSizeMode.StretchImage;
             pbxJogador3.SizeMode = PictureBoxSizeMode.StretchImage;
             pbxJogador4.SizeMode = PictureBoxSizeMode.StretchImage;
             pbxJogador5.SizeMode = PictureBoxSizeMode.StretchImage;
             pbxJogador6.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            //jogadores.Add(new Jogador("Player1", "playerhandbol.jpg", "pivo", 10,10,10,10,10));
-            //jogadores.Add(new Jogador("Player2", "player2.png", "pivo", 10, 10, 10, 10, 10));
-            //jogadores.Add(new Jogador("Player3", "playerhandbol.jpg", "pivo", 10, 10, 10, 10, 10));
-            //jogadores.Add(new Jogador("Player4", "player2.png", "pivo", 10, 10, 10, 10, 10));
-            //jogadores.Add(new Jogador("Player5", "playerhandbol.jpg", "pivo", 10, 10, 10, 10, 10));
-            //jogadores.Add(new Jogador("Player6", "player2.png", "pivo", 10, 10, 10, 10, 10));
 
             #region .: Entradas :.
 
@@ -208,6 +215,12 @@ namespace ProjetoAnalisadorTecnicoHandbol
             ISAnaliseColetiva.NewRule("R13", "if importanciaCentral is muitoAlta and importanciaMeiaDireita is muitoAlta then formacao is 4+2");
             ISAnaliseColetiva.NewRule("R14", "if importanciaCentral is muitoAlta and importanciaMeiaEsquerda is muitoAlta then formacao is 4+2");
             ISAnaliseColetiva.NewRule("R15", "if importanciaMeiaDireita is muitoAlta and importanciaMeiaDireita is muitoAlta then formacao is 4+2");
+            ISAnaliseColetiva.NewRule("R16", "if importanciaCentral is muitoAlta or importanciaCentral is alta and importanciaMeiaDireita is muitoBaixa or importanciaMeiaDireita is baixa or importanciaMeiaDireita is media then formacao is 5+1");
+            ISAnaliseColetiva.NewRule("R17", "if importanciaCentral is muitoAlta or importanciaCentral is alta and importanciaMeiaEsquerda is muitoBaixa or importanciaMeiaEsquerda is baixa then formacao is 5+1");
+            ISAnaliseColetiva.NewRule("R18", "if importanciaCentral is muitoAlta or importanciaCentral is alta and importanciaMeiaDireita is baixa or importanciaMeiaDireita is baixa  then formacao is 5+1");
+            ISAnaliseColetiva.NewRule("R19", "if importanciaCentral is muitoAlta or importanciaCentral is alta and importanciaMeiaEsquerda is baixa or importanciaMeiaEsquerda is baixa then formacao is 5+1");
+            ISAnaliseColetiva.NewRule("R20", "if importanciaMeiaDireita is muitoAlta and importanciaMeiaDireita is muitoAlta then formacao is 4+2");
+            ISAnaliseColetiva.NewRule("R21", "if importanciaMeiaDireita is muitoAlta and importanciaMeiaDireita is muitoAlta then formacao is 4+2");
 
             #endregion
         }
@@ -226,36 +239,6 @@ namespace ProjetoAnalisadorTecnicoHandbol
             pbxJogador5.Image = Image.FromFile("..//..//imagens//playerhandbol.jpg");
             pbxJogador6.Location = new Point(posicoes[5].posicaoX, posicoes[5].posicaoY);
             pbxJogador6.Image = Image.FromFile("..//..//imagens//playerhandbol.jpg");
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ColocarFormacao(formacao.formacao6x0, jogadores);
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            ColocarFormacao(formacao.formacao5x1, jogadores);
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            ColocarFormacao(formacao.formacao4x2, jogadores);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            ColocarFormacao(formacao.formacao3x3, jogadores);
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            ColocarFormacao(formacao.formacao5plus1, jogadores);
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            ColocarFormacao(formacao.formacao4plus2, jogadores);
         }
 
         private void btnGerarTatica_Click(object sender, EventArgs e)
@@ -314,7 +297,7 @@ namespace ProjetoAnalisadorTecnicoHandbol
                         saida[item.Label] += item.FiringStrength;
                 }
 
-                ColocarFormacao(formacao.RetornarFormacao(saida.OrderBy(x => x.Value).FirstOrDefault().Key), jogadores);
+                ColocarFormacao(formacao.RetornarFormacao(saida.OrderByDescending(x => x.Value).FirstOrDefault().Key), jogadores);
             }
         }
 
