@@ -201,6 +201,11 @@ namespace ProjetoAnalisadorTecnicoHandbol
             ISAnaliseIndividual.NewRule("R15", "if peso is pesado and habilidade is regular then importancia is media");
             ISAnaliseIndividual.NewRule("R16", "if peso is emForma and velocidade is lento then importancia is media");
             ISAnaliseIndividual.NewRule("R17", "if peso is emForma and velocidade is lento and habilidade is ruim then importancia is muitoBaixa");
+            ISAnaliseIndividual.NewRule("R18", "if velocidade is lento and habilidade is ruim then importancia is baixa");
+            ISAnaliseIndividual.NewRule("R19", "if velocidade is comum and habilidade is regular then importancia is media");
+            ISAnaliseIndividual.NewRule("R20", "if velocidade is comum and habilidade is ruim then importancia is baixa");
+            ISAnaliseIndividual.NewRule("R21", "if velocidade is rapido and habilidade is regular then importancia is media");
+            ISAnaliseIndividual.NewRule("R22", "if velocidade is rapido and habilidade is bom then importancia is alta");
 
             ISAnaliseColetiva.NewRule("R1", "if importanciaCentral is alta and importanciaMeiaDireita is alta and importanciaMeiaEsquerda is alta then formacao is 5-1");
             ISAnaliseColetiva.NewRule("R2", "if importanciaPivo is alta or importanciaPivo is muitoAlta then formacao is 6-0");
