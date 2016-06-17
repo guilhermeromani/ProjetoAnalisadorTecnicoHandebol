@@ -25,12 +25,12 @@ namespace ProjetoAnalisadorTecnicoHandbol
         {
             InitializeComponent();
 
-            jogadores.Add(new Jogador("A", "", "Ponta Esquerda", 2, 2, 1.7f, 3, 80));
-            jogadores.Add(new Jogador("B", "", "Meia Esquerda", 2, 2, 1.7f, 3, 80));
-            jogadores.Add(new Jogador("C", "", "Central", 10, 10, 2f, 7, 80));
-            jogadores.Add(new Jogador("D", "", "Meia Direita", 2, 2, 1.7f, 3, 80));
-            jogadores.Add(new Jogador("E", "", "Ponta Direita", 2, 2, 1.7f, 3, 80));
-            jogadores.Add(new Jogador("F", "", "Pivo", 2, 2, 1.7f, 3, 80));
+            jogadores.Add(new Jogador("A", "", "Ponta Esquerda", 6, 2, 1.9f, 3, 55));
+            jogadores.Add(new Jogador("B", "", "Meia Esquerda", 1, 10, 1.7f, 7, 90));
+            jogadores.Add(new Jogador("C", "", "Central", 10, 5, 2f, 7, 110));
+            jogadores.Add(new Jogador("D", "", "Meia Direita", 2, 8, 1.7f, 3, 60));
+            jogadores.Add(new Jogador("E", "", "Ponta Direita", 2, 10, 1.7f, 6, 78));
+            jogadores.Add(new Jogador("F", "", "Pivo", 2, 10, 1.7f, 3, 65));
 
             List<string> nomesJogadores = new List<string>();
             foreach (Jogador jogadores in jogadores)
@@ -202,17 +202,19 @@ namespace ProjetoAnalisadorTecnicoHandbol
             ISAnaliseIndividual.NewRule("R8", "if altura is baixo and velocidade is lento then importancia is baixa");
             ISAnaliseIndividual.NewRule("R9", "if altura is baixo and habilidade is regular and velocidade is rapido then importancia is media");
             ISAnaliseIndividual.NewRule("R11", "if peso is leve and habilidade is bom and velocidade is rapido then importancia is alta");
-            ISAnaliseIndividual.NewRule("R12", "if peso is emForma and forca is forte and velocidade is rapido then importancia is muitoAlta");
-            ISAnaliseIndividual.NewRule("R13", "if peso is pesado and forca is forte then importancia is alta");
-            ISAnaliseIndividual.NewRule("R14", "if peso is leve and habilidade is regular and velocidade is comum then importancia is media");
-            ISAnaliseIndividual.NewRule("R15", "if peso is pesado and habilidade is regular then importancia is media");
-            ISAnaliseIndividual.NewRule("R16", "if peso is emForma and velocidade is lento then importancia is media");
-            ISAnaliseIndividual.NewRule("R17", "if peso is emForma and velocidade is lento and habilidade is ruim then importancia is muitoBaixa");
-            ISAnaliseIndividual.NewRule("R18", "if velocidade is lento and habilidade is ruim then importancia is baixa");
-            ISAnaliseIndividual.NewRule("R19", "if velocidade is comum and habilidade is regular then importancia is media");
-            ISAnaliseIndividual.NewRule("R20", "if velocidade is comum and habilidade is ruim then importancia is baixa");
-            ISAnaliseIndividual.NewRule("R21", "if velocidade is rapido and habilidade is regular then importancia is media");
-            ISAnaliseIndividual.NewRule("R22", "if velocidade is rapido and habilidade is bom then importancia is alta");
+            ISAnaliseIndividual.NewRule("R12", "if peso is leve and habilidade is regular then importancia is media");
+            ISAnaliseIndividual.NewRule("R13", "if peso is emForma and forca is forte and velocidade is rapido then importancia is muitoAlta");
+            ISAnaliseIndividual.NewRule("R14", "if peso is pesado and forca is forte then importancia is alta");
+            ISAnaliseIndividual.NewRule("R15", "if peso is leve and habilidade is regular and velocidade is comum then importancia is media");
+            ISAnaliseIndividual.NewRule("R16", "if peso is pesado and habilidade is regular then importancia is media");
+            ISAnaliseIndividual.NewRule("R17", "if peso is emForma and velocidade is lento then importancia is media");
+            ISAnaliseIndividual.NewRule("R18", "if peso is emForma and velocidade is lento and habilidade is ruim then importancia is muitoBaixa");
+            ISAnaliseIndividual.NewRule("R19", "if velocidade is lento and habilidade is ruim then importancia is baixa");
+            ISAnaliseIndividual.NewRule("R20", "if velocidade is comum and habilidade is regular then importancia is media");
+            ISAnaliseIndividual.NewRule("R21", "if velocidade is comum and habilidade is ruim then importancia is baixa");
+            ISAnaliseIndividual.NewRule("R22", "if velocidade is comum and habilidade is bom then importancia is media");
+            ISAnaliseIndividual.NewRule("R23", "if velocidade is rapido and habilidade is regular then importancia is media");
+            ISAnaliseIndividual.NewRule("R24", "if velocidade is rapido and habilidade is bom then importancia is alta");
 
             ISAnaliseColetiva.NewRule("R1", "if importanciaCentral is alta and importanciaMeiaDireita is alta and importanciaMeiaEsquerda is alta then formacao is 5-1");
             ISAnaliseColetiva.NewRule("R2", "if importanciaPivo is alta or importanciaPivo is muitoAlta then formacao is 6-0");
