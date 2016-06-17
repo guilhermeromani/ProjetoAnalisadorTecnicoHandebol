@@ -25,12 +25,12 @@ namespace ProjetoAnalisadorTecnicoHandbol
         {
             InitializeComponent();
 
-            jogadores.Add(new Jogador("A", "", "Ponta Esquerda", 6, 2, 1.9f, 3, 55));
-            jogadores.Add(new Jogador("B", "", "Meia Esquerda", 1, 10, 1.7f, 7, 90));
-            jogadores.Add(new Jogador("C", "", "Central", 10, 5, 2f, 7, 110));
-            jogadores.Add(new Jogador("D", "", "Meia Direita", 2, 8, 1.7f, 3, 60));
-            jogadores.Add(new Jogador("E", "", "Ponta Direita", 2, 10, 1.7f, 6, 78));
-            jogadores.Add(new Jogador("F", "", "Pivo", 2, 10, 1.7f, 3, 65));
+            jogadores.Add(new Jogador("A", "", "Ponta Esquerda", 3, 2, 1.7f, 3, 55));
+            jogadores.Add(new Jogador("B", "", "Meia Esquerda", 10, 10, 1.8f, 9, 90));
+            jogadores.Add(new Jogador("C", "", "Central", 10, 10, 2f, 10, 90));
+            jogadores.Add(new Jogador("D", "", "Meia Direita", 10, 9, 1.8f, 9, 80));
+            jogadores.Add(new Jogador("E", "", "Ponta Direita", 2, 2, 1.7f, 3, 58));
+            jogadores.Add(new Jogador("F", "", "Pivo", 2, 2, 1.7f, 3, 65));
 
             List<string> nomesJogadores = new List<string>();
             foreach (Jogador jogadores in jogadores)
@@ -215,6 +215,7 @@ namespace ProjetoAnalisadorTecnicoHandbol
             ISAnaliseIndividual.NewRule("R22", "if velocidade is comum and habilidade is bom then importancia is media");
             ISAnaliseIndividual.NewRule("R23", "if velocidade is rapido and habilidade is regular then importancia is media");
             ISAnaliseIndividual.NewRule("R24", "if velocidade is rapido and habilidade is bom then importancia is alta");
+            ISAnaliseIndividual.NewRule("R25", "if velocidade is lento and habilidade is bom then importancia is media");
 
             ISAnaliseColetiva.NewRule("R1", "if importanciaCentral is alta and importanciaMeiaDireita is alta and importanciaMeiaEsquerda is alta then formacao is 5-1");
             ISAnaliseColetiva.NewRule("R2", "if importanciaPivo is alta or importanciaPivo is muitoAlta then formacao is 6-0");
@@ -225,16 +226,17 @@ namespace ProjetoAnalisadorTecnicoHandbol
             ISAnaliseColetiva.NewRule("R7", "if importanciaPontaDireita is baixa and importanciaPontaEsquerda is baixa and importanciaPivo is baixa then formacao is 3-3");
             ISAnaliseColetiva.NewRule("R8", "if importanciaPontaDireita is muitoBaixa and importanciaPontaEsquerda is muitoBaixa and importanciaPivo is muitoBaixa then formacao is 3-3");
             ISAnaliseColetiva.NewRule("R9", "if importanciaPivo is media then formacao is 5-1");
-            ISAnaliseColetiva.NewRule("R12", "if importanciaCentral is muitoAlta or importanciaMeiaDireita is muitoAlta or importanciaMeiaEsquerda is muitoAlta then formacao is 5+1");
-            ISAnaliseColetiva.NewRule("R13", "if importanciaCentral is muitoAlta and importanciaMeiaDireita is muitoAlta then formacao is 4+2");
-            ISAnaliseColetiva.NewRule("R14", "if importanciaCentral is muitoAlta and importanciaMeiaEsquerda is muitoAlta then formacao is 4+2");
-            ISAnaliseColetiva.NewRule("R15", "if importanciaMeiaDireita is muitoAlta and importanciaMeiaDireita is muitoAlta then formacao is 4+2");
-            ISAnaliseColetiva.NewRule("R16", "if importanciaCentral is muitoAlta or importanciaCentral is alta and importanciaMeiaDireita is muitoBaixa or importanciaMeiaDireita is baixa or importanciaMeiaDireita is media then formacao is 5+1");
-            ISAnaliseColetiva.NewRule("R17", "if importanciaCentral is muitoAlta or importanciaCentral is alta and importanciaMeiaEsquerda is muitoBaixa or importanciaMeiaEsquerda is baixa then formacao is 5+1");
-            ISAnaliseColetiva.NewRule("R18", "if importanciaCentral is muitoAlta or importanciaCentral is alta and importanciaMeiaDireita is baixa or importanciaMeiaDireita is baixa  then formacao is 5+1");
-            ISAnaliseColetiva.NewRule("R19", "if importanciaCentral is muitoAlta or importanciaCentral is alta and importanciaMeiaEsquerda is baixa or importanciaMeiaEsquerda is baixa then formacao is 5+1");
-            ISAnaliseColetiva.NewRule("R20", "if importanciaMeiaDireita is muitoAlta and importanciaMeiaDireita is muitoAlta then formacao is 4+2");
-            ISAnaliseColetiva.NewRule("R21", "if importanciaMeiaDireita is muitoAlta and importanciaMeiaDireita is muitoAlta then formacao is 4+2");
+            ISAnaliseColetiva.NewRule("R10", "if importanciaCentral is muitoAlta or importanciaMeiaDireita is muitoAlta or importanciaMeiaEsquerda is muitoAlta then formacao is 5+1");
+            ISAnaliseColetiva.NewRule("R11", "if importanciaCentral is muitoAlta and importanciaMeiaDireita is muitoAlta then formacao is 4+2");
+            ISAnaliseColetiva.NewRule("R12", "if importanciaCentral is muitoAlta and importanciaMeiaEsquerda is muitoAlta then formacao is 4+2");
+            ISAnaliseColetiva.NewRule("R13", "if importanciaCentral is muitoAlta or importanciaCentral is alta and importanciaMeiaDireita is muitoBaixa or importanciaMeiaDireita is baixa or importanciaMeiaDireita is media then formacao is 5+1");
+            ISAnaliseColetiva.NewRule("R14", "if importanciaCentral is muitoAlta or importanciaCentral is alta and importanciaMeiaEsquerda is muitoBaixa or importanciaMeiaEsquerda is baixa then formacao is 5+1");
+            ISAnaliseColetiva.NewRule("R15", "if importanciaCentral is muitoAlta or importanciaCentral is alta and importanciaMeiaDireita is baixa or importanciaMeiaDireita is baixa  then formacao is 5+1");
+            ISAnaliseColetiva.NewRule("R16", "if importanciaCentral is muitoAlta or importanciaCentral is alta and importanciaMeiaEsquerda is baixa or importanciaMeiaEsquerda is baixa then formacao is 5+1");
+            ISAnaliseColetiva.NewRule("R17", "if importanciaMeiaDireita is muitoAlta and importanciaMeiaEsquerda is muitoAlta then formacao is 4+2");
+            ISAnaliseColetiva.NewRule("R18", "if importanciaMeiaDireita is alta or importanciaMeiaDireita is muitoAlta and importanciaMeiaEsquerda is muitoAlta or importanciaMeiaEsquerda is alta then formacao is 4-2");
+            ISAnaliseColetiva.NewRule("R19", "if importanciaPivo is media and importanciaPontaEsquerda is media and importanciaPontaDireita is media then formacao is 3-3");
+            ISAnaliseColetiva.NewRule("R20", "if importanciaCentral is baixa and importanciaPivo is baixa then formacao is 4-2");
 
             #endregion
         }
@@ -324,7 +326,7 @@ namespace ProjetoAnalisadorTecnicoHandbol
                                                         cmbPosicao.SelectedItem.ToString(),
                                                         float.Parse(txtHabilidade.Text, CultureInfo.InvariantCulture),
                                                         float.Parse(txtVelocidade.Text, CultureInfo.InvariantCulture),
-                                                        float.Parse(txtAltura.Text, CultureInfo.InvariantCulture),
+                                                        (float)Convert.ToDouble(txtAltura.Text),
                                                         float.Parse(txtForca.Text, CultureInfo.InvariantCulture),
                                                         float.Parse(txtPeso.Text, CultureInfo.InvariantCulture)
                                                         );
