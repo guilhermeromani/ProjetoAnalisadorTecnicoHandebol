@@ -28,15 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtTitulo = new System.Windows.Forms.Label();
-            this.pbxJogador1 = new System.Windows.Forms.PictureBox();
-            this.pbxJogador2 = new System.Windows.Forms.PictureBox();
-            this.pbxJogador3 = new System.Windows.Forms.PictureBox();
-            this.pbxJogador4 = new System.Windows.Forms.PictureBox();
-            this.pbxJogador5 = new System.Windows.Forms.PictureBox();
-            this.pbxJogador6 = new System.Windows.Forms.PictureBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.cmbPosicao = new System.Windows.Forms.ComboBox();
             this.btnCadastrarJogador = new System.Windows.Forms.Button();
@@ -48,7 +40,6 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtHabilidade = new System.Windows.Forms.TextBox();
             this.btnGerarTatica = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblVelocidade = new System.Windows.Forms.Label();
@@ -57,27 +48,25 @@
             this.lblHabilidade = new System.Windows.Forms.Label();
             this.lstJogadores = new System.Windows.Forms.ListBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxJogador1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxJogador2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxJogador3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxJogador4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxJogador5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxJogador6)).BeginInit();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pbxJogador6 = new System.Windows.Forms.PictureBox();
+            this.pbxJogador5 = new System.Windows.Forms.PictureBox();
+            this.pbxJogador4 = new System.Windows.Forms.PictureBox();
+            this.pbxJogador3 = new System.Windows.Forms.PictureBox();
+            this.pbxJogador2 = new System.Windows.Forms.PictureBox();
+            this.pbxJogador1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxJogador6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxJogador5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxJogador4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxJogador3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxJogador2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxJogador1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(424, 122);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(570, 520);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // txtTitulo
             // 
@@ -89,56 +78,9 @@
             this.txtTitulo.TabIndex = 1;
             this.txtTitulo.Text = "Analisador Técnico de Handbol";
             // 
-            // pbxJogador1
-            // 
-            this.pbxJogador1.Location = new System.Drawing.Point(383, 445);
-            this.pbxJogador1.Name = "pbxJogador1";
-            this.pbxJogador1.Size = new System.Drawing.Size(91, 111);
-            this.pbxJogador1.TabIndex = 2;
-            this.pbxJogador1.TabStop = false;
-            // 
-            // pbxJogador2
-            // 
-            this.pbxJogador2.Location = new System.Drawing.Point(490, 369);
-            this.pbxJogador2.Name = "pbxJogador2";
-            this.pbxJogador2.Size = new System.Drawing.Size(91, 111);
-            this.pbxJogador2.TabIndex = 3;
-            this.pbxJogador2.TabStop = false;
-            // 
-            // pbxJogador3
-            // 
-            this.pbxJogador3.Location = new System.Drawing.Point(614, 337);
-            this.pbxJogador3.Name = "pbxJogador3";
-            this.pbxJogador3.Size = new System.Drawing.Size(91, 111);
-            this.pbxJogador3.TabIndex = 4;
-            this.pbxJogador3.TabStop = false;
-            // 
-            // pbxJogador4
-            // 
-            this.pbxJogador4.Location = new System.Drawing.Point(722, 337);
-            this.pbxJogador4.Name = "pbxJogador4";
-            this.pbxJogador4.Size = new System.Drawing.Size(91, 111);
-            this.pbxJogador4.TabIndex = 5;
-            this.pbxJogador4.TabStop = false;
-            // 
-            // pbxJogador5
-            // 
-            this.pbxJogador5.Location = new System.Drawing.Point(832, 369);
-            this.pbxJogador5.Name = "pbxJogador5";
-            this.pbxJogador5.Size = new System.Drawing.Size(91, 111);
-            this.pbxJogador5.TabIndex = 6;
-            this.pbxJogador5.TabStop = false;
-            // 
-            // pbxJogador6
-            // 
-            this.pbxJogador6.Location = new System.Drawing.Point(940, 445);
-            this.pbxJogador6.Name = "pbxJogador6";
-            this.pbxJogador6.Size = new System.Drawing.Size(91, 111);
-            this.pbxJogador6.TabIndex = 7;
-            this.pbxJogador6.TabStop = false;
-            // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.Controls.Add(this.cmbPosicao);
             this.tabPage1.Controls.Add(this.btnCadastrarJogador);
             this.tabPage1.Controls.Add(this.label9);
@@ -160,10 +102,9 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(357, 571);
+            this.tabPage1.Size = new System.Drawing.Size(357, 542);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cadastro Atletas";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // cmbPosicao
             // 
@@ -182,12 +123,15 @@
             // 
             // btnCadastrarJogador
             // 
+            this.btnCadastrarJogador.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnCadastrarJogador.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrarJogador.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCadastrarJogador.Location = new System.Drawing.Point(19, 205);
             this.btnCadastrarJogador.Name = "btnCadastrarJogador";
             this.btnCadastrarJogador.Size = new System.Drawing.Size(319, 39);
             this.btnCadastrarJogador.TabIndex = 8;
             this.btnCadastrarJogador.Text = "Cadastrar Jogador";
-            this.btnCadastrarJogador.UseVisualStyleBackColor = true;
+            this.btnCadastrarJogador.UseVisualStyleBackColor = false;
             this.btnCadastrarJogador.Click += new System.EventHandler(this.btnCadastrarJogador_Click);
             // 
             // label9
@@ -248,21 +192,16 @@
             // 
             // btnGerarTatica
             // 
+            this.btnGerarTatica.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnGerarTatica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGerarTatica.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnGerarTatica.Location = new System.Drawing.Point(19, 468);
             this.btnGerarTatica.Name = "btnGerarTatica";
             this.btnGerarTatica.Size = new System.Drawing.Size(319, 51);
             this.btnGerarTatica.TabIndex = 9;
             this.btnGerarTatica.Text = "Gerar Tatica";
-            this.btnGerarTatica.UseVisualStyleBackColor = true;
+            this.btnGerarTatica.UseVisualStyleBackColor = false;
             this.btnGerarTatica.Click += new System.EventHandler(this.btnGerarTatica_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(209, 17);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(129, 173);
-            this.pictureBox3.TabIndex = 23;
-            this.pictureBox3.TabStop = false;
             // 
             // label5
             // 
@@ -330,17 +269,83 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(12, 45);
+            this.tabControl1.Location = new System.Drawing.Point(10, 103);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(365, 597);
+            this.tabControl1.Size = new System.Drawing.Size(365, 568);
             this.tabControl1.TabIndex = 9;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(209, 17);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(129, 173);
+            this.pictureBox3.TabIndex = 23;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pbxJogador6
+            // 
+            this.pbxJogador6.Location = new System.Drawing.Point(940, 445);
+            this.pbxJogador6.Name = "pbxJogador6";
+            this.pbxJogador6.Size = new System.Drawing.Size(91, 111);
+            this.pbxJogador6.TabIndex = 7;
+            this.pbxJogador6.TabStop = false;
+            // 
+            // pbxJogador5
+            // 
+            this.pbxJogador5.Location = new System.Drawing.Point(832, 369);
+            this.pbxJogador5.Name = "pbxJogador5";
+            this.pbxJogador5.Size = new System.Drawing.Size(91, 111);
+            this.pbxJogador5.TabIndex = 6;
+            this.pbxJogador5.TabStop = false;
+            // 
+            // pbxJogador4
+            // 
+            this.pbxJogador4.Location = new System.Drawing.Point(722, 337);
+            this.pbxJogador4.Name = "pbxJogador4";
+            this.pbxJogador4.Size = new System.Drawing.Size(91, 111);
+            this.pbxJogador4.TabIndex = 5;
+            this.pbxJogador4.TabStop = false;
+            // 
+            // pbxJogador3
+            // 
+            this.pbxJogador3.Location = new System.Drawing.Point(614, 337);
+            this.pbxJogador3.Name = "pbxJogador3";
+            this.pbxJogador3.Size = new System.Drawing.Size(91, 111);
+            this.pbxJogador3.TabIndex = 4;
+            this.pbxJogador3.TabStop = false;
+            // 
+            // pbxJogador2
+            // 
+            this.pbxJogador2.Location = new System.Drawing.Point(490, 369);
+            this.pbxJogador2.Name = "pbxJogador2";
+            this.pbxJogador2.Size = new System.Drawing.Size(91, 111);
+            this.pbxJogador2.TabIndex = 3;
+            this.pbxJogador2.TabStop = false;
+            // 
+            // pbxJogador1
+            // 
+            this.pbxJogador1.Location = new System.Drawing.Point(383, 445);
+            this.pbxJogador1.Name = "pbxJogador1";
+            this.pbxJogador1.Size = new System.Drawing.Size(91, 111);
+            this.pbxJogador1.TabIndex = 2;
+            this.pbxJogador1.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.pictureBox1.Location = new System.Drawing.Point(-7, 62);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1090, 19);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1041, 696);
+            this.BackgroundImage = global::ProjetoAnalisadorTecnicoHandbol.Properties.Resources.fundo4;
+            this.ClientSize = new System.Drawing.Size(1055, 696);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.pbxJogador6);
             this.Controls.Add(this.pbxJogador5);
@@ -353,25 +358,23 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxJogador1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxJogador2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxJogador3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxJogador4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxJogador5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxJogador6)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxJogador6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxJogador5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxJogador4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxJogador3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxJogador2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxJogador1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label txtTitulo;
         private System.Windows.Forms.PictureBox pbxJogador1;
         private System.Windows.Forms.PictureBox pbxJogador2;
@@ -399,6 +402,7 @@
         private System.Windows.Forms.Label lblHabilidade;
         private System.Windows.Forms.ListBox lstJogadores;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

@@ -40,11 +40,18 @@ namespace ProjetoAnalisadorTecnicoHandbol
             lstJogadores.DataSource = nomesJogadores;
 
             pbxJogador1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbxJogador1.BackColor = Color.Transparent;
             pbxJogador2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbxJogador2.BackColor = Color.Transparent;
             pbxJogador3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbxJogador3.BackColor = Color.Transparent;
             pbxJogador4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbxJogador4.BackColor = Color.Transparent;
             pbxJogador5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbxJogador5.BackColor = Color.Transparent;
             pbxJogador6.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbxJogador6.BackColor = Color.Transparent;
+            
 
             #region .: Entradas :.
 
@@ -233,17 +240,17 @@ namespace ProjetoAnalisadorTecnicoHandbol
         public void ColocarFormacao(List<PosicaoPictureBox> posicoes, List<Jogador> jogadores)
         {
             pbxJogador1.Location = new Point(posicoes[0].posicaoX, posicoes[0].posicaoY);
-            pbxJogador1.Image = Image.FromFile("..//..//imagens//playerhandbol.jpg");
+            pbxJogador1.Image = Image.FromFile("..//..//imagens//player3.png");
             pbxJogador2.Location = new Point(posicoes[1].posicaoX, posicoes[1].posicaoY);
-            pbxJogador2.Image = Image.FromFile("..//..//imagens//playerhandbol.jpg");
+            pbxJogador2.Image = Image.FromFile("..//..//imagens//player3.png");
             pbxJogador3.Location = new Point(posicoes[2].posicaoX, posicoes[2].posicaoY);
-            pbxJogador3.Image = Image.FromFile("..//..//imagens//playerhandbol.jpg");
+            pbxJogador3.Image = Image.FromFile("..//..//imagens//player3.png");
             pbxJogador4.Location = new Point(posicoes[3].posicaoX, posicoes[3].posicaoY);
-            pbxJogador4.Image = Image.FromFile("..//..//imagens//playerhandbol.jpg");
+            pbxJogador4.Image = Image.FromFile("..//..//imagens//player3.png");
             pbxJogador5.Location = new Point(posicoes[4].posicaoX, posicoes[4].posicaoY);
-            pbxJogador5.Image = Image.FromFile("..//..//imagens//playerhandbol.jpg");
+            pbxJogador5.Image = Image.FromFile("..//..//imagens//player3.png");
             pbxJogador6.Location = new Point(posicoes[5].posicaoX, posicoes[5].posicaoY);
-            pbxJogador6.Image = Image.FromFile("..//..//imagens//playerhandbol.jpg");
+            pbxJogador6.Image = Image.FromFile("..//..//imagens//player3.png");
         }
 
         private void btnGerarTatica_Click(object sender, EventArgs e)
